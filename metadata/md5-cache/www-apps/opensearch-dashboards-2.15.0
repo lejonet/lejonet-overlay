@@ -1,0 +1,11 @@
+DEFINED_PHASES=install prepare
+DEPEND=acct-group/opensearch-dashboards acct-user/opensearch-dashboards
+DESCRIPTION=Open source visualization dashboards for OpenSearch.
+EAPI=8
+HOMEPAGE=https://opensearch.org/
+KEYWORDS=~amd64
+LICENSE=Apache-2.0 BSD MIT ISC
+RDEPEND=acct-group/opensearch-dashboards acct-user/opensearch-dashboards dev-libs/expat dev-libs/nspr dev-libs/nss >=net-libs/nodejs-18 <net-libs/nodejs-19
+SLOT=0
+SRC_URI=https://artifacts.opensearch.org/releases/bundle/opensearch-dashboards/2.15.0/opensearch-dashboards-2.15.0-linux-x64.tar.gz
+_md5_=a84ab04d6c04bce8f93093f5dadf50f8

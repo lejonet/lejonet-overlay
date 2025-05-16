@@ -1,0 +1,9 @@
+/var/log/opensearch-dashboards/opensearch-dashboards.log /var/log/opensearch-dashboards/opensearch-dashboards.err {
+        daily
+        rotate 7
+        copytruncate
+        compress
+        delaycompress
+        missingok
+        notifempty
+}

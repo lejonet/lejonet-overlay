@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install
+DEPEND=!agelas? ( dev-libs/openssl )
+DESCRIPTION=A small, reviewable, experimental and fully privilege seperated VPN daemon.
+EAPI=8
+HOMEPAGE=https://sanctorum.se/sanctum/
+IUSE=agelas
+KEYWORDS=~amd64
+LICENSE=ISC
+RDEPEND=!agelas? ( dev-libs/openssl )
+SLOT=0
+SRC_URI=https://sanctorum.se/sanctum/releases/sanctum-0.9.12.tgz
+_md5_=2449f540c8408e063c93f7a58c46bc58

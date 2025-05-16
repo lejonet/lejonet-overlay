@@ -1,0 +1,13 @@
+DEFINED_PHASES=install postinst postrm preinst prerm pretend
+DEPEND=!sys-boot/systemd-boot !sys-apps/systemd-utils[boot]
+DESCRIPTION=Systemd-boot signed with internal Secure Boot key
+EAPI=8
+HOMEPAGE=https://git.utl.int.dataaturservice.se/lejonet/systemd-boot-signing
+INHERIT=mount-boot
+KEYWORDS=amd64
+LICENSE=GPL-2 LGPL-2.1 MIT public-domain
+RDEPEND=!sys-boot/systemd-boot !sys-apps/systemd-utils[boot]
+SLOT=0
+SRC_URI=https://web-frontend.utl-pub.int.dataaturservice.se/tarball/signed-boot-254.13.tar.xz
+_eclasses_=mount-boot-utils	69218c024651aa10db01df7e8a5b63e0	mount-boot	03b0280b48caf6e18472fa7272cfcda8
+_md5_=e7080caaa9b4af707a7e2cb9f4ec9477

@@ -1,0 +1,1 @@
+sanctum_args="-c /etc/hymn/hymn-${tunnel}.conf"

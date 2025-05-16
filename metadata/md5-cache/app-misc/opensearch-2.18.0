@@ -1,0 +1,13 @@
+DEFINED_PHASES=install prepare
+DEPEND=acct-group/opensearch acct-user/opensearch
+DESCRIPTION=Open source distributed and RESTful search engine.
+EAPI=8
+HOMEPAGE=https://opensearch.org/
+INHERIT=tmpfiles
+KEYWORDS=~amd64
+LICENSE=Apache-2.0
+RDEPEND=acct-group/opensearch acct-user/opensearch sys-libs/zlib virtual/jre:21 virtual/tmpfiles
+SLOT=0
+SRC_URI=https://artifacts.opensearch.org/releases/bundle/opensearch/2.18.0/opensearch-2.18.0-linux-x64.tar.gz
+_eclasses_=tmpfiles	9a9814db5a3fbd4f1e921c05297e7735
+_md5_=4d573fc93b9101b67682de8df4bd36f9

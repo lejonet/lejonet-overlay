@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+# Copyright 1999-2021 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+OPENSEARCH_DASHBOARDS_USER="${OPENSEARCH_DASHBOARDS_USER:-opensearch-dashboards}"
+OPENSEARCH_DASHBOARDS_CONFIG="${OPENSEARCH_DASHBOARDS_CONFIG:-/etc/opensearch-dashboards/opensearch_dashboards.yml}"
+OPENSEARCH_DASHBOARDS_CACHE_DIR="${OPENSEARCH_DASHBOARDS_CACHE_DIR:-/var/cache/opensearch-dashboards}"
+OPENSEARCH_DASHBOARDS_BABEL_CACHE_PATH="${OPENSEARCH_DASHBOARDS_CACHE_DIR}/.babelcache.json"
+OPENSEARCH_DASHBOARDS_DATA_DIR="${OPENSEARCH_DASHBOARDS_DATA_DIR:-/var/lib/opensearch-dashboards}"
+OPENSEARCH_DASHBOARDS_LOG_DIR="${OPENSEARCH_DASHBOARDS_LOG_DIR:-/var/log/opensearch-dashboards}"
+
+command="/usr/share/opensearch-dashboards/bin/opensearch-dashboards serve"
+command_args="--config ${OPENSEARCH_DASHBOARDS_CONFIG} --path.data=${OPENSEARCH_DASHBOARDS_DATA_DIR}"
+command_background="true"
+command_user="${OPENSEARCH_DASHBOARDS_USER}"
+error_log="${OPENSEARCH_DASHBOARDS_LOG_DIR}/opensearch-dashboards.err"
+output_log="${OPENSEARCH_DASHBOARDS_LOG_DIR}/opensearch-dashboards.log"
+pidfile="/run/${RC_SVCNAME}.pid"
+retry="60"
+start_stop_daemon_args="--env BABEL_CACHE_PATH=${OPENSEARCH_DASHBOARDS_BABEL_CACHE_PATH}"
+
+start_pre() {
+	checkpath -d -o "${OPENSEARCH_DASHBOARDS_USER}" -m750 "${OPENSEARCH_DASHBOARDS_CACHE_DIR}"
+	checkpath -d -o "${OPENSEARCH_DASHBOARDS_USER}" -m750 "${OPENSEARCH_DASHBOARDS_DATA_DIR}"
+	checkpath -d -o "${OPENSEARCH_DASHBOARDS_USER}" -m750 "${OPENSEARCH_DASHBOARDS_LOG_DIR}"
+}
