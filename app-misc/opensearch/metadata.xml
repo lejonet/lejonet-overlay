@@ -6,6 +6,6 @@
 		<name>Daniel Kuehn</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">jorisvink/sanctum</remote-id>
+		<remote-id type="github">opensearch-project/OpenSearch</remote-id>
 	</upstream>
 </pkgmetadata>
