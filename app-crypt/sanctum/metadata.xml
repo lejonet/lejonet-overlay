@@ -5,7 +5,4 @@
 		<email>daniel@kuehn.se</email>
 		<name>Daniel Kuehn</name>
 	</maintainer>
-	<use>
-		<flag name="agelas">Enable using nyfe-agelas crypto</flag>
-	</use>
 </pkgmetadata>
