@@ -14,7 +14,7 @@ name="Sanctum daemon (${tunnel})"
 command="/usr/bin/sanctum"
 command_args="${sanctum_args}"
 command_args_background="-d"
-pidfile="/var/run/hymn/hymn-${tunnel}.pid"
+pidfile="/var/run/hymn/${tunnel}.pid"
 
 depend() {
 	need net
