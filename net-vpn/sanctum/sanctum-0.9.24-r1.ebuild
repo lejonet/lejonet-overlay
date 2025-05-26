@@ -3,7 +3,9 @@
 
 EAPI=8
 
-DESCRIPTION="A small, reviewable,  experimental and fully privilege seperated VPN daemon."
+inherit tmpfiles
+
+DESCRIPTION="A small, reviewable, experimental and fully privilege seperated VPN daemon."
 HOMEPAGE="https://sanctorum.se/sanctum/"
 SRC_URI="https://sanctorum.se/sanctum/releases/${P}.tgz"
 
@@ -28,4 +30,10 @@ src_install() {
 
 	newinitd "${FILESDIR}/sanctum.initd" sanctum
 	newconfd "${FILESDIR}/sanctum.confd" sanctum
+
+	newtmpfiles "${FILESDIR}/sanctum.tmpfiles.d" sanctum.conf
+}
+
+pkg_postinst() {
+	tmpfiles_process sanctum.conf
 }
