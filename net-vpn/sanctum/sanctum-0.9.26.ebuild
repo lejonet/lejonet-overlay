@@ -16,12 +16,6 @@ KEYWORDS="~amd64"
 DEPEND="dev-libs/libsodium[cpu_flags_x86_aes]"
 RDEPEND="${DEPEND}"
 
-src_compile() {
-	emake -C tools/hymn
-	emake -C tools/ambry
-	emake -C tools/vicar
-}
-
 src_install() {
 	emake DESTDIR="${D}" PREFIX=/usr install
 
