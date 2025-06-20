@@ -1,0 +1,25 @@
+From 6ae11b951d461db0aed5c3e0080669525463d5a9 Mon Sep 17 00:00:00 2001
+From: Daniel Kuehn <daniel@kuehn.se>
+Date: Fri, 20 Jun 2025 14:44:53 +0200
+Subject: [PATCH] Makefile: change _FORTIFY_SOURCE=2 to _FORTIFY_SOURCE=3
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index d3bd451..198e623 100644
+--- a/Makefile
++++ b/Makefile
+@@ -40,7 +40,7 @@ INSTALLBIN	?= $(INSTALL) -o $(binowner) -g $(bingroup) -m 0755
+
+ SECURITY_CFLAGS	= \
+ 	-fstack-protector-all -fwrapv -fPIC \
+-	-D_FORTIFY_SOURCE=2 -Wall -g -O2 -gdwarf-2 -Werror
++	-D_FORTIFY_SOURCE=3 -Wall -g -O2 -gdwarf-2 -Werror
+
+ SYSTEM		:= $(shell uname -s)
+ ifeq ($(SYSTEM), Linux)
+--
+2.49.0
+
