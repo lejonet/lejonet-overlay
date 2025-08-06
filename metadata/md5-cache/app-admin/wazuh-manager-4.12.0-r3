@@ -11,4 +11,4 @@ RDEPEND=acct-user/wazuh acct-group/wazuh
 SLOT=0
 SRC_URI=https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-manager/wazuh-manager_4.12.0-1_amd64.deb
 _eclasses_=toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0	systemd	a964c0cbe818b5729da1dbfcee5be861
-_md5_=283859e6c5b90625de3dfe53883ae853
+_md5_=4ee71c94abc2431d672f7576bfdb6de2

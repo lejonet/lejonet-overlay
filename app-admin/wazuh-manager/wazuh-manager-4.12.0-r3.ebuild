@@ -71,6 +71,9 @@ src_install() {
 	insinto /var
 	doins -r "${WORKDIR}"/var/ossec
 
+	insinto /var/ossec/etc
+	doins "${WORKDIR}"/var/ossec/etc/ossec.conf
+
 	keepdir /var/ossec/.ssh
 	keepdir /var/ossec/api/configuration/security
 	keepdir /var/ossec/api/configuration/ssl
@@ -111,4 +114,17 @@ src_install() {
 	keepdir /var/ossec/var/wodles
 
 	fowners wazuh:wazuh -R /var/ossec
+	fperms og+x /var/ossec/agentless/*
+	fperms og+x /var/ossec/active-response/bin/*
+	fperms og+x /var/ossec/framework/python/bin/*
+	fperms og+x /var/ossec/wodles/*
+	fperms og+x /var/ossec/wodles/*/*
+	fperms og+x /var/ossec/wodles/*/*/*
+	fperms og+x /var/ossec/lib/*
+	fperms og+x /var/ossec/integrations/*
+
+	find /var/ossec/packages_files/manager_installation_scripts -iname '*.sh' -exec chmod og+x {} \+
+	find /var/ossec/packages_files/manager_installation_scripts -iname '*.template' -exec chmod og+x {} \+
+	find /var/ossec/packages_files/manager_installation_scripts -iname '*.files' -exec chmod og+x {} \+
+	find /var/ossec/framework/python/lib -iname '*.py' -exec chmod og+x {} \+
 }
