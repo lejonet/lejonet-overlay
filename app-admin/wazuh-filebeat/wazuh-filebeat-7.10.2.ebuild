@@ -15,6 +15,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 RESTRICT="test"
 
+QA_PRESTRIPPED="/usr/share/filebeat/bin/filebeat
+/usr/share/filebeat/bin/filebeat-god"
+
 src_unpack() {
 	unpack ${A}
 	unpack "${WORKDIR}"/data.tar.gz
