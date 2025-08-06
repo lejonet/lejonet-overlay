@@ -10,6 +10,6 @@ LICENSE="metapackage"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND="=app-admin/wazuh-manager-${PV}
+DEPEND="=app-admin/wazuh-manager-${PVR}
 =app-admin/wazuh-filebeat-7.10.2"
 RDEPEND="${DEPEND}"
