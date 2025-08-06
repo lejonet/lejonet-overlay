@@ -122,9 +122,20 @@ src_install() {
 	fperms og+x /var/ossec/wodles/*/*/*
 	fperms og+x /var/ossec/lib/*
 	fperms og+x /var/ossec/integrations/*
-
-	find /var/ossec/packages_files/manager_installation_scripts -iname '*.sh' -exec chmod og+x {} \+
-	find /var/ossec/packages_files/manager_installation_scripts -iname '*.template' -exec chmod og+x {} \+
-	find /var/ossec/packages_files/manager_installation_scripts -iname '*.files' -exec chmod og+x {} \+
-	find /var/ossec/framework/python/lib -iname '*.py' -exec chmod og+x {} \+
+	fperms og+x /var/ossec/packages_files/manager_installation_scripts/*.sh
+	fperms og+x /var/ossec/packages_files/manager_installation_scripts/src/init/*.sh
+	fperms og+x /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/*/*.template
+	fperms og+x /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/*/*/*.template
+	fperms og+x /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/*/*.files
+	fperms og+x /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/*/*/*.files
+	fperms og+x /var/ossec/framework/python/lib/*.so
+	fperms og+x /var/ossec/framework/python/lib/python3.10/*.py
+	fperms og+x /var/ossec/framework/python/lib/python3.10/*/*.py
+	fperms og+x /var/ossec/framework/python/lib/python3.10/*/*/*.py
+	fperms og+x /var/ossec/framework/python/lib/python3.10/*/*/*.sh
+	fperms og+x /var/ossec/framework/python/lib/python3.10/*/*/*.so
+	fperms og+x /var/ossec/framework/python/lib/python3.10/*/*/*/*.py
+	fperms og+x /var/ossec/framework/python/lib/python3.10/*/*/*/*.so
+	fperms og+x /var/ossec/framework/python/lib/python3.10/lib-dynload/*.so
+	fperms og+x /var/ossec/framework/python/lib/
 }
