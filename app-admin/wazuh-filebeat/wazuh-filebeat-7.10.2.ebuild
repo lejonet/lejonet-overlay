@@ -3,11 +3,11 @@
 
 EAPI=8
 
-inherit rpm systemd
+inherit systemd
 
 DESCRIPTION="Lightweight log shipper for Logstash and Elasticsearch, Wazuh edition"
 HOMEPAGE="https://www.elastic.co/products/beats"
-SRC_URI="https://packages.wazuh.com/4.x/yum/filebeat-${PV}-1.x86_64.rpm -> ${P}.rpm"
+SRC_URI="https://packages.wazuh.com/4.x/apt/pool/main/f/filebeat/filebeat_${PV}-1_amd64.deb"
 S="${WORKDIR}"
 
 LICENSE="Apache-2.0 BSD-2 MIT"
@@ -16,7 +16,8 @@ KEYWORDS="~amd64"
 RESTRICT="test"
 
 src_unpack() {
-	rpm_unpack ${A}
+	unpack ${A}
+	unpack "${WORKDIR}"/data.tar.xz
 
 	unpack "${FILESDIR}"/wazuh-filebeat-0.4.tar.gz
 	unpack "${FILESDIR}"/wazuh-template.json.gz
@@ -36,7 +37,7 @@ src_install() {
 	doins -r "${WORKDIR}"/etc/filebeat
 
 	insinto /etc/filebeat
-	doins "$WORKDIR}"/wazuh-template.json
+	doins "${WORKDIR}"/wazuh-template.json
 	newins "${FILESDIR}"/wazuh-filebeat.yml filebeat.yml
 
 	insinto /usr/share/filebeat/module
