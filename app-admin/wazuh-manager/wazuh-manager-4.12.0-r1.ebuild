@@ -14,6 +14,10 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
+DEPEND="acct-user/wazuh
+acct-group/wazuh"
+RDEPEND="${DEPEND}"
+
 src_unpack() {
 	unpack ${A}
 	unpack "${WORKDIR}"/data.tar.xz

@@ -1,12 +1,14 @@
 BDEPEND=virtual/pkgconfig
 DEFINED_PHASES=install unpack
+DEPEND=acct-user/wazuh acct-group/wazuh
 DESCRIPTION=Wazuh Manager that takes care of analysing events and generating alerts
 EAPI=8
 HOMEPAGE=https://wazuh.com
 INHERIT=systemd
 KEYWORDS=~amd64
 LICENSE=GPL-2
+RDEPEND=acct-user/wazuh acct-group/wazuh
 SLOT=0
 SRC_URI=https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-manager/wazuh-manager_4.12.0-1_amd64.deb
 _eclasses_=toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0	systemd	a964c0cbe818b5729da1dbfcee5be861
-_md5_=a38f3efb030114e4c6b98e611b356057
+_md5_=0628db8d2af62606a24a3565335023f2
