@@ -1,0 +1,32 @@
+#!/sbin/openrc-run
+# Copyright 2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+WAZUH_HOME=${WAZUH_HOME:="/var/ossec"}
+WAZUH_USER=${WAZUH_USER:="root"}
+WAZUH_GROUP=${WAZUH_GROUP:="root"}
+
+name="wazuh-manager"
+description=""
+command="${WAZUH_HOME}/bin/wazuh-control"
+command_args=""
+command_user="${WAZUH_USER}:${WAZUH_GROUP}"
+
+depend() {
+	need net
+}
+
+start() {
+	ebegin "Starting Wazuh Manager..."
+	${command} start
+}
+
+stop() {
+	ebegin "Stopping Wazuh Manager..."
+	${command} stop
+}
+
+status() {
+	ebegin "Wazuh Manager status"
+	${command} status
+}
