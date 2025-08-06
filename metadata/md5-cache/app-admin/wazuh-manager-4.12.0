@@ -1,12 +1,12 @@
-BDEPEND=app-arch/rpm2targz virtual/pkgconfig
+BDEPEND=virtual/pkgconfig
 DEFINED_PHASES=install unpack
 DESCRIPTION=Wazuh Manager that takes care of analysing events and generating alerts
 EAPI=8
 HOMEPAGE=https://wazuh.com
-INHERIT=rpm systemd
+INHERIT=systemd
 KEYWORDS=~amd64
 LICENSE=GPL-2
 SLOT=0
-SRC_URI=https://packages.wazuh.com/4.x/yum/wazuh-manager-4.12.0-1.x86_64.rpm
-_eclasses_=estack	c61c368a76fdf3a82fdf8dbaebea3804	rpm	a07e59be6cf48ed85e624a41e8a7a832	toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0	systemd	a964c0cbe818b5729da1dbfcee5be861
-_md5_=468691bf95becaa86155e622124a7108
+SRC_URI=https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-manager/wazuh-manager_4.12.0-1_amd64.deb
+_eclasses_=toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0	systemd	a964c0cbe818b5729da1dbfcee5be861
+_md5_=86018f6e609000e68247a6bc73f0c668
