@@ -18,6 +18,46 @@ DEPEND="acct-user/wazuh
 acct-group/wazuh"
 RDEPEND="${DEPEND}"
 
+QA_PRESTRIPPED="/var/ossec/bin/.*
+/var/ossec/framework/python/lib/python3.10/site-packages/grpc/_cython/cygrpc.cpython-310-x86_64-linux-gnu.so
+/var/ossec/framework/python/lib/python3.10/site-packages/numpy.libs/libquadmath-96973f99.so.0.0.0
+/var/ossec/framework/python/lib/python3.10/site-packages/numpy.libs/libgfortran-040039e1.so.5.0.0
+/var/ossec/lib/.*
+/var/ossec/active-response/bin/.*
+/var/ossec/framework/python/bin/python3.10
+/var/ossec/framework/python/lib/libpython3.so
+/var/ossec/framework/python/lib/libpython3.10.so.1.0
+/var/ossec/framework/python/lib/python3.10/site-packages/_cffi_backend.cpython-310-x86_64-linux-gnu.so
+/var/ossec/framework/python/lib/python3.10/site-packages/yarl/_quoting_c.cpython-310-x86_64-linux-gnu.so
+/var/ossec/framework/python/lib/python3.10/site-packages/markupsafe/_speedups.cpython-310-x86_64-linux-gnu.so
+/var/ossec/framework/python/lib/python3.10/site-packages/pyarrow/.*.so
+/var/ossec/framework/python/lib/python3.10/site-packages/multidict/_multidict.cpython-310-x86_64-linux-gnu.so
+/var/ossec/framework/python/lib/python3.10/site-packages/lazy_object_proxy/cext.cpython-310-x86_64-linux-gnu.so
+/var/ossec/framework/python/lib/python3.10/site-packages/rpds/rpds.cpython-310-x86_64-linux-gnu.so
+/var/ossec/framework/python/lib/python3.10/site-packages/frozenlist/_frozenlist.cpython-310-x86_64-linux-gnu.so
+/var/ossec/framework/python/lib/python3.10/site-packages/sqlalchemy/cyextension/.*.so
+/var/ossec/framework/python/lib/python3.10/site-packages/psutil/.*.so
+/var/ossec/framework/python/lib/python3.10/site-packages/cryptography/hazmat/bindings/_rust.abi3.so
+/var/ossec/framework/python/lib/python3.10/site-packages/greenlet/_greenlet.cpython-310-x86_64-linux-gnu.so
+/var/ossec/framework/python/lib/python3.10/site-packages/greenlet/tests/.*.so
+/var/ossec/framework/python/lib/python3.10/site-packages/grpc/_cython/cygrpc.cpython-310-x86_64-linux-gnu.so
+/var/ossec/framework/python/lib/python3.10/site-packages/uvloop/loop.cpython-310-x86_64-linux-gnu.so
+/var/ossec/framework/python/lib/python3.10/site-packages/numpy.libs/libquadmath-96973f99.so.0.0.0
+/var/ossec/framework/python/lib/python3.10/site-packages/numpy.libs/libgfortran-040039e1.so.5.0.0
+/var/ossec/framework/python/lib/python3.10/site-packages/numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so
+/var/ossec/framework/python/lib/python3.10/site-packages/numpy/linalg/.*.so
+/var/ossec/framework/python/lib/python3.10/site-packages/numpy/random/.*.so
+/var/ossec/framework/python/lib/python3.10/site-packages/numpy/random/bit_generator.cpython-310-x86_64-linux-gnu.so
+/var/ossec/framework/python/lib/python3.10/site-packages/numpy/random/_mt19937.cpython-310-x86_64-linux-gnu.so
+/var/ossec/framework/python/lib/python3.10/site-packages/numpy/random/lib/libnpyrandom.a
+/var/ossec/framework/python/lib/python3.10/site-packages/numpy/fft/_pocketfft_internal.cpython-310-x86_64-linux-gnu.so
+/var/ossec/framework/python/lib/python3.10/site-packages/numpy/core/.*.so
+/var/ossec/framework/python/lib/python3.10/site-packages/numpy/core/lib/libnpymath.a
+/var/ossec/framework/python/lib/python3.10/lib-dynload/.*.so
+/var/ossec/framework/python/lib/python3.10/config-3.10-x86_64-linux-gnu/python.o
+/var/ossec/framework/python/lib/python3.10/config-3.10-x86_64-linux-gnu/libpython3.10.a
+/var/ossec/lib/.*.so.*"
+
 src_unpack() {
 	unpack ${A}
 	unpack "${WORKDIR}"/data.tar.xz
