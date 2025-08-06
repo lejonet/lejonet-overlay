@@ -68,6 +68,7 @@ src_install() {
 	newconfd "${FILESDIR}"/wazuh-manager.confd wazuh-manager
 	newinitd "${FILESDIR}"/wazuh-manager.initd wazuh-manager
 	systemd_dounit "${WORKDIR}"/usr/lib/systemd/system/wazuh-manager.service
+	newenvd "${FILESDIR}"/wazuh-manager.envd 99wazuh-manager
 
 	dodir /var/ossec
 	cp -ar "${WORKDIR}"/var/ossec/ "${ED}"/var/ || die "Failed to copy /var/ossec"
