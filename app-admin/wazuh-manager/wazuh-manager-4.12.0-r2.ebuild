@@ -69,4 +69,6 @@ src_install() {
 	keepdir /var/ossec/var/run
 	keepdir /var/ossec/var/upgrade
 	keepdir /var/ossec/var/wodles
+
+	fowners wazuh:wazuh -R /var/ossec
 }
