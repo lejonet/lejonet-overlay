@@ -17,7 +17,7 @@ RESTRICT="test"
 
 src_unpack() {
 	unpack ${A}
-	unpack "${WORKDIR}"/data.tar.xz
+	unpack "${WORKDIR}"/data.tar.gz
 
 	unpack "${FILESDIR}"/wazuh-filebeat-0.4.tar.gz
 	unpack "${FILESDIR}"/wazuh-template.json.gz
