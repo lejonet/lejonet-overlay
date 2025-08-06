@@ -1,10 +1,10 @@
 DEFINED_PHASES=-
-DEPEND==app-admin/wazuh-manager-4.12.0-r2 =app-admin/wazuh-filebeat-7.10.2
+DEPEND==app-admin/wazuh-manager-4.12.0-r3 =app-admin/wazuh-filebeat-7.10.2
 DESCRIPTION=Wazuh server is composed of Wazuh Manager and Wazuh Filebeat
 EAPI=8
 HOMEPAGE=https://wazuh.com
 KEYWORDS=~amd64
 LICENSE=metapackage
-RDEPEND==app-admin/wazuh-manager-4.12.0-r2 =app-admin/wazuh-filebeat-7.10.2
+RDEPEND==app-admin/wazuh-manager-4.12.0-r3 =app-admin/wazuh-filebeat-7.10.2
 SLOT=0
 _md5_=21168500ed638bac9c77061f789a3be3
