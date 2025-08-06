@@ -36,6 +36,9 @@ src_install() {
 	insinto /usr/share/
 	doins -r "${WORKDIR}"/usr/share/filebeat
 
+	exeinto /usr/share/filebeat/bin
+	doexe "${WORKDIR}"/usr/share/filebeat/bin/*
+
 	insinto /etc/
 	doins -r "${WORKDIR}"/etc/filebeat
 
