@@ -70,7 +70,7 @@ src_install() {
 	systemd_dounit "${WORKDIR}"/usr/lib/systemd/system/wazuh-manager.service
 
 	dodir /var/ossec
-	cp -ar "${WORKDIR}"/var/ossec/ "${ED}"/var/ossec/ || die "Failed to copy /var/ossec"
+	cp -ar "${WORKDIR}"/var/ossec/ "${ED}"/var/ || die "Failed to copy /var/ossec"
 
 	keepdir /var/ossec/.ssh
 	keepdir /var/ossec/api/configuration/security
