@@ -1,4 +1,4 @@
-DEFINED_PHASES=install unpack
+DEFINED_PHASES=install postinst unpack
 DEPEND=acct-group/opensearch acct-user/opensearch
 DESCRIPTION=Open source distributed and RESTful search engine, Wazuh edition.
 EAPI=8
@@ -10,4 +10,4 @@ RDEPEND=acct-group/opensearch acct-user/opensearch sys-libs/zlib virtual/jre:21 
 SLOT=0
 SRC_URI=https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-indexer/wazuh-indexer_4.12.0-1_amd64.deb
 _eclasses_=tmpfiles	9a9814db5a3fbd4f1e921c05297e7735
-_md5_=fb5525e3230a9ded493d0b59cada7f22
+_md5_=bf56dcd45d9d19cba43473ecba687760

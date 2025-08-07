@@ -20,6 +20,10 @@ RDEPEND="${DEPEND}
 	sys-libs/zlib
 	virtual/jre:21"
 
+QA_PREBUILT="/usr/share/wazuh-indexer/.*"
+QA_PRESTRIPPED="/usr/share/wazuh-indexer/jdk/lib/.*
+/usr/share/wazuh-indexer/jdk/bin/.*"
+
 src_unpack() {
 	unpack ${A}
 	unpack "${WORKDIR}"/data.tar.gz
@@ -53,4 +57,8 @@ src_install() {
 	newconfd "${FILESDIR}/${PN}.confd" "${PN}"
 	newinitd "${FILESDIR}/${PN}.initd" "${PN}"
 	newtmpfiles "${FILESDIR}/${PN}.tmpfiles.d" "${PN}".conf
+}
+
+pkg_postinst() {
+	tmpfiles_process
 }
