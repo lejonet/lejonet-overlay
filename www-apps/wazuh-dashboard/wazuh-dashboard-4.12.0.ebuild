@@ -6,6 +6,7 @@ EAPI=8
 DESCRIPTION="Open source visualization dashboards for OpenSearch, Wazuh edition. "
 HOMEPAGE="https://wazuh.com"
 SRC_URI="https://packages.wazuh.com/4.x/apt/pool/main/w/${PN}/${PN}_${PV}-1_amd64.deb"
+S="${WORKDIR}"
 
 LICENSE="Apache-2.0 BSD MIT ISC"
 SLOT="0"
@@ -18,6 +19,9 @@ RDEPEND="${DEPEND}
 	dev-libs/nspr
 	dev-libs/nss
 "
+
+QA_PRESTRIPPED="/usr/share/wazuh-dashboard/node/bin/node
+/usr/share/wazuh-dashboard/node/fallback/bin/node"
 
 src_unpack() {
 	unpack ${A}
@@ -39,14 +43,13 @@ src_install() {
 	newinitd "${FILESDIR}/${PN}".initd "${PN}"
 	newconfd "${FILESDIR}/${PN}".confd "${PN}"
 
+	dodir /usr/share
 	cp -ar "${WORKDIR}"/usr/share/wazuh-dashboard "${ED}"/usr/share || die "Failed to copy /usr/share/wazuh-dashboard"
 
 	diropts -m 0750 -o opensearch-dashboards -g opensearch-dashboards
-	keepdir /var/log/${PN}
-	keepdir /var/cache/${PN}
-	keepdir /var/lib/${PN}
+	keepdir /var/{lib,log}/"${PN}"
 
-	fowners -R opensearch-dashboards:opensearch-dashboards /var/lib/${PN}
-	fowners -R opensearch-dashboards:opensearch-dashboards /var/cache/${PN}
-	fowners -R opensearch-dashboards:opensearch-dashboards /etc/${PN}
+	fowners -R opensearch-dashboards:opensearch-dashboards /usr/share/"${PN}"
+	fowners -R opensearch-dashboards:opensearch-dashboards /var/{lib,log}/"${PN}"
+	fowners -R opensearch-dashboards:opensearch-dashboards /etc/"${PN}"
 }

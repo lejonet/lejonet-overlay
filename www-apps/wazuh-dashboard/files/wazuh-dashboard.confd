@@ -1,7 +1,7 @@
 # User that wazuh-dashboard should run as
 #WAZUH_DASHBOARDS_USER="${WAZUH_DASHBOARDS_USER:-opensearch-dashboards}"
 
-# Group that wazuh-dashboard should run as
+# Path to the configuration file that should be used
 #WAZUH_DASHBOARDS_CONFIG="${WAZUH_DASHBOARDS_CONFIG:-/etc/wazuh-dashboard/opensearch_dashboards.yml}"
 
 # Cache dir path, has to be writable by the chosen user/group
