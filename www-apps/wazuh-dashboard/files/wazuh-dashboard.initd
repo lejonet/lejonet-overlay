@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+# Copyright 2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+WAZUH_DASHBOARDS_USER="${WAZUH_DASHBOARDS_USER:-opensearch-dashboards}"
+WAZUH_DASHBOARDS_CONFIG="${WAZUH_DASHBOARDS_CONFIG:-/etc/wazuh-dashboard/opensearch_dashboards.yml}"
+WAZUH_DASHBOARDS_CACHE_DIR="${WAZUH_DASHBOARDS_CACHE_DIR:-/var/cache/wazuh-dashboards}"
+WAZUH_DASHBOARDS_BABEL_CACHE_PATH="${WAZUH_DASHBOARDS_CACHE_DIR}/.babelcache.json"
+WAZUH_DASHBOARDS_DATA_DIR="${WAZUH_DASHBOARDS_DATA_DIR:-/var/lib/wazuh-dashboard}"
+WAZUH_DASHBOARDS_LOG_DIR="${WAZUH_DASHBOARDS_LOG_DIR:-/var/log/wazuh-dashboard}"
+
+command="/usr/share/wazuh-dashboard/bin/opensearch-dashboards serve"
+command_args="--config ${WAZUH_DASHBOARDS_CONFIG} --path.data=${WAZUH_DASHBOARDS_DATA_DIR}"
+command_background="true"
+command_user="${WAZUH_DASHBOARDS_USER}"
+error_log="${WAZUH_DASHBOARDS_LOG_DIR}/opensearch-dashboards.err"
+output_log="${WAZUH_DASHBOARDS_LOG_DIR}/opensearch-dashboards.log"
+pidfile="/run/${RC_SVCNAME}.pid"
+retry="60"
+start_stop_daemon_args="--env BABEL_CACHE_PATH=${WAZUH_DASHBOARDS_BABEL_CACHE_PATH}"
+
+start_pre() {
+	checkpath -d -o "${WAZUH_DASHBOARDS_USER}" -m750 "${WAZUH_DASHBOARDS_CACHE_DIR}"
+	checkpath -d -o "${WAZUH_DASHBOARDS_USER}" -m750 "${WAZUH_DASHBOARDS_DATA_DIR}"
+	checkpath -d -o "${WAZUH_DASHBOARDS_USER}" -m750 "${WAZUH_DASHBOARDS_LOG_DIR}"
+}

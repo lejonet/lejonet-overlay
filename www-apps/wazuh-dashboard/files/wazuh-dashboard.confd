@@ -1,0 +1,17 @@
+# User that wazuh-dashboard should run as
+#WAZUH_DASHBOARDS_USER="${WAZUH_DASHBOARDS_USER:-opensearch-dashboards}"
+
+# Group that wazuh-dashboard should run as
+#WAZUH_DASHBOARDS_CONFIG="${WAZUH_DASHBOARDS_CONFIG:-/etc/wazuh-dashboard/opensearch_dashboards.yml}"
+
+# Cache dir path, has to be writable by the chosen user/group
+#WAZUH_DASHBOARDS_CACHE_DIR="${WAZUH_DASHBOARDS_CACHE_DIR:-/var/cache/wazuh-dashboards}"
+
+# Babel cache dir path, has to be writable by the chosen user/group
+#WAZUH_DASHBOARDS_BABEL_CACHE_PATH="${WAZUH_DASHBOARDS_CACHE_DIR}/.babelcache.json"
+
+# Data dir path, has to be writable by the chosen user/group
+#WAZUH_DASHBOARDS_DATA_DIR="${WAZUH_DASHBOARDS_DATA_DIR:-/var/lib/wazuh-dashboard}"
+
+# Log dir path, has to be writable by the chosen user/group
+#WAZUH_DASHBOARDS_LOG_DIR="${WAZUH_DASHBOARDS_LOG_DIR:-/var/log/wazuh-dashboard}"

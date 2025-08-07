@@ -1,0 +1,9 @@
+/var/log/wazuh-dashboard/wazuh-dashboard.log /var/log/wazuh-dashboard/wazuh-dashboard.err {
+        daily
+        rotate 7
+        copytruncate
+        compress
+        delaycompress
+        missingok
+        notifempty
+}
