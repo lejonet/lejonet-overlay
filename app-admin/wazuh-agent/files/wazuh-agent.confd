@@ -1,0 +1,14 @@
+# Sets the home directory for the agent, its the directory that should
+# contain bin/wazuh-control and other OSSEC artefacts, defaults to
+# /var/ossec.
+# WAZUH_HOME=
+
+# What user the agent should be run as, defaults to root.
+# As the agent is actually several daemons and the wazuh-control
+# script only manages the daemons, the user that executes the
+# control script needs to have the capabilities to at least
+# impersonate (drop privileges) to the wazuh user.
+# WAZUH_USER=
+
+# What group the agent should run as, defaults to root.
+# WAZUH_GROUP=
