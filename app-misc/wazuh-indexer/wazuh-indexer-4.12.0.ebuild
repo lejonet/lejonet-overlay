@@ -28,13 +28,12 @@ src_unpack() {
 src_install() {
 	insopts -m 0640
 	insinto /etc/"${PN}"
-	doins -r "${WORKDIR}/etc/${PN}"
+	doins -r "${WORKDIR}/etc/${PN}/*"
 
 	fowners -R root:opensearch /etc/"${PN}"
-	fperms -R 0750 /etc/"${PN}"
 
 	insinto /usr/share/"${PN}"
-	doins -r "${WORKDIR}/usr/share/${PN}"
+	doins -r "${WORKDIR}/usr/share/${PN}/*"
 
 	fperms -R og+x /usr/share/"${PN}"/bin
 	fperms -R og+x /usr/share/"${PN}"/jdk/bin
