@@ -30,7 +30,7 @@ src_install() {
 	insinto /etc/"${PN}"
 	doins -r "${WORKDIR}/etc/${PN}"
 
-	fowners -R root:"${PN}" /etc/"${PN}"
+	fowners -R root:opensearch /etc/"${PN}"
 	fperms -R 0750 /etc/"${PN}"
 
 	insinto /usr/share/"${PN}"
@@ -42,7 +42,7 @@ src_install() {
 	fperms og+x /usr/share/"${PN}"/plugins/opensearch-security/tools/*.sh
 
 	keepdir /var/{lib,log}/"${PN}"
-	fowners "${PN}:${PN}" /var/{lib,log}/"${PN}"
+	fowners opensearch:opensearch /var/{lib,log}/"${PN}"
 	fperms 0750 /var/{lib,log}/"${PN}"
 
 	insinto /etc/default
