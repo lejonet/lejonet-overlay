@@ -1,0 +1,72 @@
+#!/sbin/openrc-run
+# Copyright 2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+name="Wazuh-indexer"
+description="Wazuh indexer"
+
+WAZUH_INSTANCE=${RC_SVCNAME#*.}
+
+if [ -n "${WAZUH_INSTANCE}" ] && [ ${RC_SVCNAME} != "wazuh-indexer" ]; then
+	WAZUH_BASE_PATH="/var/lib/wazuh-indexer/${WAZUH_INSTANCE}"
+	CONF_DIR="/etc/wazuh-indexer/${WAZUH_INSTANCE}"
+	DEFAULT_LOG_DIR="/var/log/wazuh-indexer/${WAZUH_INSTANCE}"
+else
+	WAZUH_BASE_PATH="/var/lib/wazuh-indexer/_default"
+	CONF_DIR="/etc/wazuh-indexer"
+	DEFAULT_LOG_DIR="/var/log/wazuh-indexer/_default"
+fi
+
+WAZUH_HOME=${WAZUH_HOME:="/usr/share/wazuh-indexer"}
+WAZUH_USER=${WAZUH_USER:="opensearch"}
+WAZUH_GROUP=${WAZUH_GROUP:="opensearch"}
+WAZUH_STARTUP_SLEEP_TIME=${WAZUH_STARTUP_TIME:=5}
+WAZUH_JAVA_HOME=${WAZUH_JAVA_HOME:=$(java-config -g JAVA_HOME)}
+MAX_OPEN_FILES=${MAX_OPEN_FILES:=65536}
+MAX_MAP_COUNT=${MAX_MAP_COUNT:=262144}
+
+DATA_DIR=${DATA_DIR:="${WAZUH_BASE_PATH}/data"}
+LOG_DIR=${LOG_DIR:="${DEFAULT_LOG_DIR}"}
+
+if [ -f "${CONF_DIR}/opensearch.in.sh" ]; then
+    WAZUH_INCLUDE="${CONF_DIR}/opensearch.in.sh"
+fi
+
+export WAZUH_INCLUDE
+export WAZUH_JAVA_HOME
+export WAZUH_JAVA_OPTS
+export WAZUH_JVM_OPTIONS
+export WAZUH_STARTUP_SLEEP_TIME
+export WAZUH_PATH_CONF="${CONF_DIR}"
+
+pidfile="/run/wazuh-indexer/${RC_SVCNAME}.pid"
+
+command="/usr/share/wazuh-indexer/bin/opensearch"
+command_args="-Epath.logs=${LOG_DIR} -Epath.data=${DATA_DIR}"
+command_args_background="--daemonize --pidfile=${pidfile}"
+command_user="${WAZUH_USER}:${WAZUH_GROUP}"
+required_files="${CONF_DIR}/opensearch.yml"
+retry="TERM/30/KILL/30"
+
+depend() {
+	use net
+}
+
+start_pre() {
+	if [ -n "${MAX_MAP_COUNT}" -a -f /proc/sys/vm/max_map_count ]; then
+		sysctl -q -w vm.max_map_count=${MAX_MAP_COUNT}
+	fi
+
+	checkpath -d -o "${WAZUH_USER}:${WAZUH_GROUP}" -m750 "/var/lib/wazuh-indexer"
+	checkpath -d -o "${WAZUH_USER}:${WAZUH_GROUP}" -m750 "/var/log/wazuh-indexer"
+	checkpath -d -o "${WAZUH_USER}:${WAZUH_GROUP}" -m750 "/run/wazuh-indexer"
+	checkpath -d -o "${WAZUH_USER}:${WAZUH_GROUP}" -m750 "${WAZUH_BASE_PATH}"
+	checkpath -d -o "${WAZUH_USER}:${WAZUH_GROUP}" -m750 "${LOG_DIR}"
+
+	# fails to start without keystore
+	if [ ! -f "${CONF_DIR}/opensearch.keystore" ]; then
+		"${WAZUH_HOME}/bin/opensearch-keystore" create
+	else
+		"${WAZUH_HOME}/bin/opensearch-keystore" upgrade
+	fi
+}

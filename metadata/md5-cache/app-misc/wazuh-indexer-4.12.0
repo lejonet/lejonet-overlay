@@ -1,0 +1,13 @@
+DEFINED_PHASES=install unpack
+DEPEND=acct-group/opensearch acct-user/opensearch
+DESCRIPTION=Open source distributed and RESTful search engine, Wazuh edition.
+EAPI=8
+HOMEPAGE=https://wazuh.com/
+INHERIT=tmpfiles
+KEYWORDS=~amd64
+LICENSE=Apache-2.0
+RDEPEND=acct-group/opensearch acct-user/opensearch sys-libs/zlib virtual/jre:21 virtual/tmpfiles
+SLOT=0
+SRC_URI=https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-indexer/wazuh-indexer_4.12.0-1_amd64.deb
+_eclasses_=tmpfiles	9a9814db5a3fbd4f1e921c05297e7735
+_md5_=13337c4f61b5761e8575235ec1232ed5
