@@ -8,6 +8,7 @@ inherit tmpfiles
 DESCRIPTION="Open source distributed and RESTful search engine, Wazuh edition."
 HOMEPAGE="https://wazuh.com/"
 SRC_URI="https://packages.wazuh.com/4.x/apt/pool/main/w/${PN}/${PN}_${PV}-1_amd64.deb"
+S="${WORKDIR}"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -21,7 +22,7 @@ RDEPEND="${DEPEND}
 
 src_unpack() {
 	unpack ${A}
-	unpack data.tar.gz
+	unpack "${WORKDIR}"/data.tar.gz
 }
 
 src_install() {
