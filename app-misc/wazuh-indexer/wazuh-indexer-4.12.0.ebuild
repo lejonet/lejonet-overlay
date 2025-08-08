@@ -39,10 +39,10 @@ src_install() {
 	insinto /usr/share/
 	doins -r "${WORKDIR}/usr/share/${PN}"
 
-	fperms -R og+x /usr/share/"${PN}"/bin
-	fperms -R og+x /usr/share/"${PN}"/jdk/bin
-	fperms -R og+x /usr/share/"${PN}"/performance-analyzer-rca/bin
-	fperms og+x /usr/share/"${PN}"/plugins/opensearch-security/tools/*.sh
+	fperms -R ug+x /usr/share/"${PN}"/bin
+	fperms -R ug+x /usr/share/"${PN}"/jdk/bin
+	fperms -R ug+x /usr/share/"${PN}"/performance-analyzer-rca/bin
+	fperms ug+x /usr/share/"${PN}"/plugins/opensearch-security/tools/*.sh
 
 	keepdir /var/{lib,log}/"${PN}"
 	fowners opensearch:opensearch /var/{lib,log}/"${PN}"
