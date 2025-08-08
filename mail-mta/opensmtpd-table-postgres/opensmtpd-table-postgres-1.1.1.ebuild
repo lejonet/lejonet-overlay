@@ -13,5 +13,6 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND="dev-db/postgresql"
+DEPEND="dev-db/postgresql
+mail-mta/opensmtpd-extras[-opensmtpd_modules_table_postgres]"
 RDEPEND="${DEPEND}"
