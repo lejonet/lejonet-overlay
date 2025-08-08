@@ -3,10 +3,10 @@
 ################################
 
 # Opensearch home directory
-#WAZUH_HOME=/usr/share/wazuh-indexer
+#OPENSEARCH_HOME=/usr/share/wazuh-indexer
 
 # Opensearch Java path
-#WAZUH_JAVA_HOME=
+#OPENSEARCH_JAVA_HOME=
 
 # Opensearch configuration directory
 #CONF_DIR=/etc/wazuh-indexer
@@ -18,7 +18,7 @@
 #LOG_DIR=/var/log/wazuh-indexer
 
 # Additional Java OPTS
-#WAZUH_JAVA_OPTS=
+#OPENSEARCH_JAVA_OPTS=
 
 ################################
 # Opensearch service
@@ -33,7 +33,7 @@
 #WAZUH_GROUP=opensearch
 
 # The number of seconds to wait before checking if Opensearch started successfully as a daemon process
-#WAZUH_STARTUP_SLEEP_TIME=5
+#OPENSEARCH_STARTUP_SLEEP_TIME=5
 
 ################################
 # System properties
