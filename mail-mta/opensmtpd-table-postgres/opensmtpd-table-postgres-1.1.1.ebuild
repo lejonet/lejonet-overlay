@@ -18,5 +18,6 @@ DEPEND="dev-db/postgresql
 RDEPEND="${DEPEND}"
 
 src_install() {
-	emake DESTDIR="${D}" install-exec-local
+	exeinto /usr/libexec/opensmtpd
+	doexe table-postgres
 }
