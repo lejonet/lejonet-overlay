@@ -16,3 +16,7 @@ KEYWORDS="~amd64"
 DEPEND="dev-db/postgresql
 !!mail-mta/opensmtpd-extras[opensmtpd_modules_table_postgres]"
 RDEPEND="${DEPEND}"
+
+src_install() {
+	emake DESTDIR="${D}" install-exec-local
+}
