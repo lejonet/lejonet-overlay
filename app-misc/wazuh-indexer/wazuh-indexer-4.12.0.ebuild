@@ -42,7 +42,8 @@ src_install() {
 	fperms -R ug+x /usr/share/"${PN}"/bin
 	fperms -R ug+x /usr/share/"${PN}"/jdk/bin
 	fperms -R ug+x /usr/share/"${PN}"/performance-analyzer-rca/bin
-	fperms ug+x /usr/share/"${PN}"/plugins/opensearch-security/tools/*.sh
+	exeinto /usr/share/"${PN}"/plugins/opensearch-security
+	doexe /usr/share/"${PN}"/plugins/opensearch-security/tools/*.sh
 
 	keepdir /var/{lib,log}/"${PN}"
 	fowners opensearch:opensearch /var/{lib,log}/"${PN}"
