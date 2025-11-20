@@ -8,6 +8,6 @@ KEYWORDS=~amd64
 LICENSE=ISC
 RDEPEND=dev-libs/libsodium[cpu_flags_x86_aes] virtual/tmpfiles
 SLOT=0
-SRC_URI=https://sanctorum.se/sanctum/releases/sanctum-0.9.35.tgz
+SRC_URI=https://sanctorum.se/sanctum/releases/sanctum-0.9.36.tgz
 _eclasses_=tmpfiles	9a9814db5a3fbd4f1e921c05297e7735
 _md5_=9b6d348378c168f8ccd3a10717dbdb33
