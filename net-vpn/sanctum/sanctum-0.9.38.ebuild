@@ -7,7 +7,7 @@ inherit tmpfiles
 
 DESCRIPTION="A small, reviewable, experimental and fully privilege seperated VPN daemon."
 HOMEPAGE="https://sanctorum.se/sanctum/"
-SRC_URI="https://sanctorum.se/sanctum/releases/${P}.tgz"
+SRC_URI="https://sanctorum.se/releases/${P}.tgz"
 
 LICENSE="ISC"
 SLOT="0"
