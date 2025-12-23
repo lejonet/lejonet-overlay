@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DESCRIPTION="Libkyrka is a library based implementation of the sanctum VPN protocol "
+DESCRIPTION="Libkyrka is a library based implementation of the sanctum VPN protocol."
 HOMEPAGE="https://conclave.se/"
 SRC_URI="https://conclave.se/releases/${PN}/${P}.tgz"
 

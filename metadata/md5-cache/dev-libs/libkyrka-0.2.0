@@ -1,6 +1,6 @@
 DEFINED_PHASES=install
 DEPEND=dev-libs/libsodium
-DESCRIPTION=Libkyrka is a library based implementation of the sanctum VPN protocol
+DESCRIPTION=Libkyrka is a library based implementation of the sanctum VPN protocol.
 EAPI=8
 HOMEPAGE=https://conclave.se/
 KEYWORDS=~amd64
@@ -8,4 +8,4 @@ LICENSE=ISC
 RDEPEND=dev-libs/libsodium
 SLOT=0
 SRC_URI=https://conclave.se/releases/libkyrka/libkyrka-0.2.0.tgz
-_md5_=c792196460c5c85e93b4bb0984d34a0b
+_md5_=4362ff275a0c7c954c503dfa90af2e6f
