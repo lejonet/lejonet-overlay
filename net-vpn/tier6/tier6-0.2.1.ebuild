@@ -17,5 +17,5 @@ RDEPEND="${DEPEND}"
 src_install() {
 	dobin tier6
 
-	newinitd "${FILES}/tier6.initd" tier6
+	newinitd "${FILESDIR}/tier6.initd" tier6
 }
