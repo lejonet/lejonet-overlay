@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DEPEND=dev-libs/libkyrka
+DESCRIPTION=An end-to-end encrypted and peer-to-peer voice program.
+EAPI=8
+HOMEPAGE=https://conclave.se/
+KEYWORDS=~amd64
+LICENSE=ISC
+RDEPEND=dev-libs/libkyrka
+SLOT=0
+SRC_URI=https://conclave.se/releases/confessions/confessions-0.1.0.tgz
+_md5_=6a5ab94e6c92f5dec08c44e0117c1bb8
