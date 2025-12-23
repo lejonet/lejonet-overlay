@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DESCRIPTION="Build a global ethernet network based on sanctum"
+DESCRIPTION="Build a global ethernet network based on sanctum."
 HOMEPAGE="https://conclave.se/"
 SRC_URI="https://conclave.se/releases/${PN}/${P}.tgz"
 
@@ -16,4 +16,6 @@ RDEPEND="${DEPEND}"
 
 src_install() {
 	dobin tier6
+
+	newinitd "${FILES}/tier6.initd" tier6
 }

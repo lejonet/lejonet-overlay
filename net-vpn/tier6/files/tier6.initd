@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+# Copyright 2025 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+name="tier6 daemon"
+description=""
+command=/usr/bin/tier6
+command_args_background="-d"
+command_args="${tier6_args}"
+
+depend() {
+	need net
+}
