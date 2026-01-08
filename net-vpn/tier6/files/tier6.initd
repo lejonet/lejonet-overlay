@@ -2,11 +2,24 @@
 # Copyright 2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-name="tier6 daemon"
+instance="${RC_SVCNAME#tier6.}"
+if [ "${instance}" == "tier6" ]; then
+	instance="main"
+fi
+
+_CONFD_FILE="/etc/conf.d/tier6.${instance}"
+if [ -r "${_CONFD_FILE}" ]; then
+	. "${_CONFD_FILE}"
+else
+	. "/etc/conf.d/tier6"
+fi
+
+name="tier6 daemon (${instance})"
 description=""
 command=/usr/bin/tier6
-command_args_background="-d"
+command_background=true
 command_args="${tier6_args}"
+pidfile="/var/run/tier6-${instance}.pid"
 
 depend() {
 	need net
