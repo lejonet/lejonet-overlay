@@ -18,4 +18,5 @@ src_install() {
 	dobin tier6
 
 	newinitd "${FILESDIR}/tier6.initd" tier6
+	newconfd "${FILESDIR}/tier6.confd" tier6
 }
