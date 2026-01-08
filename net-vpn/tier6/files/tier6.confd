@@ -1,0 +1,3 @@
+# Change this to the path of the instanced configuration file, the default
+# configuration file that tier6 uses is /etc/tier6.conf
+#tier6_args="/etc/tier6.conf"
