@@ -7,5 +7,5 @@ KEYWORDS=~amd64
 LICENSE=ISC
 RDEPEND=dev-libs/libsodium
 SLOT=0
-SRC_URI=https://conclave.se/releases/libkyrka/libkyrka-0.2.0.tgz
+SRC_URI=https://conclave.se/releases/libkyrka/libkyrka-0.3.0.tgz
 _md5_=4362ff275a0c7c954c503dfa90af2e6f
