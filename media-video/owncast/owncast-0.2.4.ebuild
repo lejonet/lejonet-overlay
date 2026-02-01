@@ -7,12 +7,8 @@ inherit go-module
 
 DESCRIPTION="Take control over your live stream video by running it yourself. Streaming + chat out of the box."
 HOMEPAGE="https://owncast.online"
-<<<<<<< HEAD
-SRC_URI="https://github.com/owncast/owncast/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
-=======
 SRC_URI="https://github.com/owncast/owncast/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
 https://files.dataaturservice.se/${P}-deps.tar.xz"
->>>>>>> cda5cf3 (Bump version of owncast to 0.2.4)
 
 LICENSE="MIT"
 SLOT="0"
