@@ -8,11 +8,6 @@ KEYWORDS=~amd64
 LICENSE=ISC
 RDEPEND=dev-libs/libsodium[cpu_flags_x86_aes] virtual/tmpfiles
 SLOT=0
-<<<<<<<< HEAD:metadata/md5-cache/net-vpn/sanctum-1.0.4
-SRC_URI=https://sanctorum.se/releases/sanctum-1.0.4.tgz
-_eclasses_=tmpfiles	9a9814db5a3fbd4f1e921c05297e7735
-========
 SRC_URI=https://sanctorum.se/releases/sanctum-1.1.0.tgz
 _eclasses_=tmpfiles	e0b49bcd7a0daea941c0fbe4cb35ff4e
->>>>>>>> df02c6b (Bump sanctum version to 1.1.0):metadata/md5-cache/net-vpn/sanctum-1.1.0
 _md5_=366d58dc9c7e8809d3eae92c93b96a74
