@@ -7,7 +7,8 @@ inherit go-module
 
 DESCRIPTION="Infrastructure as code for DNS!"
 HOMEPAGE="https://dnscontrol.org"
-SRC_URI="https://github.com/DNSControl/dnscontrol/archive/refs/tags/v${PV}.tar.gz"
+SRC_URI="https://github.com/DNSControl/dnscontrol/archive/refs/tags/v${PV}.tar.gz
+https://files.dataaturservice.se/dnscontrol-${PV}-vendor.tar.xz"
 
 LICENSE="MIT"
 SLOT="0"
