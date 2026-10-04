@@ -15,5 +15,5 @@ DEPEND="dev-libs/libsodium"
 RDEPEND="${DEPEND}"
 
 src_install() {
-	emake DESTDIR="${D}" PREFIX=/usr LIB_DIR=/usr/lib64 install
+	emake PREFIX="${D}/usr" LIB_DIR="${D}/usr/lib64" install
 }

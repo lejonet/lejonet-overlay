@@ -8,4 +8,4 @@ LICENSE=ISC
 RDEPEND=dev-libs/libsodium
 SLOT=0
 SRC_URI=https://sanctorum.se/releases/libkyrka-1.2.0.tgz
-_md5_=d39b62e6f9b6f0d51b607855121a4807
+_md5_=12e231c2e00d8be05961bd7b41220dc6
