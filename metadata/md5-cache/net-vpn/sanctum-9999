@@ -1,0 +1,13 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=install postinst unpack
+DEPEND=dev-libs/libsodium[cpu_flags_x86_aes]
+DESCRIPTION=A small, reviewable, experimental and fully privilege seperated VPN daemon.
+EAPI=8
+HOMEPAGE=https://sanctorum.se/sanctum/
+INHERIT=tmpfiles git-r3
+LICENSE=ISC
+PROPERTIES=live
+RDEPEND=dev-libs/libsodium[cpu_flags_x86_aes] virtual/tmpfiles
+SLOT=0
+_eclasses_=tmpfiles	e0b49bcd7a0daea941c0fbe4cb35ff4e	git-r3	e6c2f983e006e805160436c75a0c1562
+_md5_=1cbb5abe6a02a5b2ea5c122dd4ea5bc0
