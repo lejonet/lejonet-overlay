@@ -1,1 +1,1 @@
-d /run/hymn 0700 root root
+d /run/hymn 0711 root root
